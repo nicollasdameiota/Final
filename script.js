@@ -60,4 +60,4 @@ setTimeout(() => {
   foto.addEventListener("click", function() {
     video.contentWindow.postMessage('{"event":"command","func":"' + (video.paused ? 'play' : 'pause') + '"}', "*");
   });
-}, 5000); // Agora a tela de carregamento sai após 5 segundos
+}, 5000);
