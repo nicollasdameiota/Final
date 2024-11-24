@@ -1,9 +1,11 @@
 document.addEventListener("DOMContentLoaded", () => {
   const dataInicio = new Date('2024-06-09T00:00:00.000Z');
+  const contador = document.querySelector('.contador');
   const dias = document.getElementById('dias');
   const horas = document.getElementById('horas');
   const minutos = document.getElementById('minutos');
   const segundos = document.getElementById('segundos');
+  const coracoes = document.querySelector('.coracoes');
   const carregamento = document.querySelector('.carregamento');
   const container = document.querySelector('.container');
   const progresso = document.querySelector('.progresso');
@@ -22,6 +24,16 @@ document.addEventListener("DOMContentLoaded", () => {
     segundos.textContent = calculoSegundos.toString().padStart(2, '0');
   }
 
+  function criarCoracao() {
+    const coracao = document.createElement('div');
+    coracao.classList.add('coracao-animado');
+    coracao.textContent = '';
+    coracoes.appendChild(coracao);
+    coracao.style.left = `${Math.random() * 100}%`;
+    coracao.style.top = `${Math.random() * 100}%`;
+    setTimeout(() => coracao.remove(), 3000);
+  }
+
   function atualizarBarraCarregamento() {
     let progressoValor = 0;
     const intervalo = setInterval(() => {
@@ -37,5 +49,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   atualizarContador();
   setInterval(atualizarContador, 1000);
+  setInterval(criarCoracao, 500);
   atualizarBarraCarregamento();
 });
