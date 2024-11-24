@@ -16,14 +16,21 @@ const progresso = document.querySelector('.progresso');
 // Função para atualizar contador
 function atualizarContador() {
   const agora = new Date();
-  const diferenca = (agora.getTime() - dataInicio.getTime()) / 1000;
-  
-  const calculoAnos = Math.floor(diferenca / 31536000);
-  const calculoMeses = Math.floor((diferenca % 31536000) / 2592000);
-  const calculoDias = Math.floor((diferenca % 2592000) / 86400);
-  const calculoHoras = Math.floor((diferenca % 86400) / 3600);
-  const calculoMinutos = Math.floor((diferenca % 3600) / 60);
-  const calculoSegundos = Math.floor(diferenca % 60);
+  const diferenca = agora.getTime() - dataInicio.getTime();
+
+  const segundosTotal = diferenca / 1000;
+  const minutosTotal = segundosTotal / 60;
+  const horasTotal = minutosTotal / 60;
+  const diasTotal = horasTotal / 24;
+  const mesesTotal = diasTotal / 30;
+  const anosTotal = mesesTotal / 12;
+
+  const calculoAnos = Math.floor(anosTotal);
+  const calculoMeses = Math.floor(mesesTotal) % 12;
+  const calculoDias = Math.floor(diasTotal) % 30;
+  const calculoHoras = Math.floor(horasTotal) % 24;
+  const calculoMinutos = Math.floor(minutosTotal) % 60;
+  const calculoSegundos = Math.floor(segundosTotal) % 60;
 
   anos.textContent = calculoAnos;
   meses.textContent = calculoMeses.toString().padStart(2, '0');
