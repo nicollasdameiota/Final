@@ -53,6 +53,7 @@ margin-bottom: 20px;
 }
 
 .foto-container {
+position: relative;
 width: 50%;
 margin: 20px auto;
 border: 2px solid #ff0055;
@@ -61,11 +62,19 @@ border-radius: 10px;
 }
 
 .foto-nosso {
+position: absolute;
+top: 0;
+left: 0;
 width: 100%;
-height: auto;
-aspect-ratio: 4/4;
+height: 100%;
 object-fit: cover;
-border-radius: 10px;
+cursor: pointer;
+z-index: 1;
+}
+
+#video {
+width: 100%;
+height: 100%;
 }
 
 .contador-container {
@@ -93,3 +102,28 @@ color: #ff0055;
 }
 
 .contador span {
+font-size: 24px;
+font-weight: bold;
+}
+
+.contador p {
+font-size: 18px;
+}
+
+.nomes {
+font-size: 48px;
+font-weight: bold;
+color: #ff0055;
+text-shadow: 0 0 10px #ff0055;
+margin-bottom: 10px;
+}
+
+.texto-amor {
+font-size: 18px;
+color: #ff69b4;
+margin-bottom: 20px;
+text-align: justify;
+padding: 20px;
+border-radius: 10px;
+background-color: rgba(0, 0, 0, 0.5);
+}
