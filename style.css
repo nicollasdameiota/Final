@@ -36,8 +36,8 @@ transition: width 5000ms;
 }
 
 .container {
-width: 80%;
-margin: 40px auto;
+width: 90%;
+margin: 20px auto;
 border: 2px solid #ff0055;
 box-shadow: 0 0 10px #ff0055;
 padding: 20px;
@@ -53,10 +53,10 @@ margin-bottom: 20px;
 }
 
 .foto-container {
+width: 30%;
+margin: 20px auto;
 border: 2px solid #ff0055;
 box-shadow: 0 0 10px #ff0055;
-width: 50%;
-margin: 20px auto;
 border-radius: 10px;
 }
 
@@ -71,45 +71,4 @@ border-radius: 10px;
 .nomes {
 font-size: 48px;
 font-weight: bold;
-color: #ff0055;
-text-shadow: 0 0 10px #ff0055;
-margin-bottom: 10px;
-}
-
-.texto-amor {
-font-size: 18px;
-color: #ff69b4;
-margin-bottom: 20px;
-text-align: justify;
-padding: 20px;
-border-radius: 10px;
-background-color: rgba(0, 0, 0, 0.5);
-}
-
-.contador-container {
-display: flex;
-flex-direction: column;
-align-items: center;
-}
-
-.contador {
-display: flex;
-justify-content: space-around;
-font-size: 36px;
-font-weight: bold;
-color: #ff0055;
-margin-bottom: 20px;
-gap: 20px;
-}
-
-.contador span {
-padding: 10px;
-border: 2px solid #ff0055;
-border-radius: 10px;
-background-color: rgba(0, 0, 0, 0.5);
-color: #fff;
-}
-
-.coluna {
-margin: 0 10px;
-}
+color
