@@ -1,65 +1,58 @@
-document.addEventListener("DOMContentLoaded", function() {
-  // Definir data de início
+document.addEventListener("DOMContentLoaded", () => {
   const dataInicio = new Date('2024-06-09T00:00:00.000Z');
-
-  // Selecionar elementos
+  const contador = document.querySelector('.contador');
   const dias = document.getElementById('dias');
   const horas = document.getElementById('horas');
   const minutos = document.getElementById('minutos');
   const segundos = document.getElementById('segundos');
+  const coracoes = document.querySelector('.coracoes');
   const carregamento = document.querySelector('.carregamento');
   const container = document.querySelector('.container');
-  const foto = document.querySelector('.foto-nosso');
-  const video = document.getElementById('video');
+  const progresso = document.querySelector('.progresso');
+  const audio = document.getElementById("audio");
 
-  // Função para formatar tempo
-  function formatarTempo(tempo) {
-    return tempo.toString().padStart(2, '0');
-  }
-
-  // Função para atualizar contador
   function atualizarContador() {
     const agora = new Date();
-    const diferenca = agora.getTime() - dataInicio.getTime();
-    const segundosTotal = diferenca / 1000;
-    const minutosTotal = segundosTotal / 60;
-    const horasTotal = minutosTotal / 60;
-    const diasTotal = horasTotal / 24;
-    const calculoDias = Math.floor(diasTotal);
-    const calculoHoras = Math.floor(horasTotal) % 24;
-    const calculoMinutos = Math.floor(minutosTotal) % 60;
-    const calculoSegundos = Math.floor(segundosTotal) % 60;
-    dias.textContent = formatarTempo(calculoDias);
-    horas.textContent = formatarTempo(calculoHoras);
-    minutos.textContent = formatarTempo(calculoMinutos);
-    segundos.textContent = formatarTempo(calculoSegundos);
+    const diferenca = (agora.getTime() - dataInicio.getTime()) / 1000;
+    const calculoDias = Math.floor(diferenca / 86400);
+    const calculoHoras = Math.floor((diferenca % 86400) / 3600);
+    const calculoMinutos = Math.floor((diferenca % 3600) / 60);
+    const calculoSegundos = Math.floor(diferenca % 60);
+    dias.textContent = calculoDias;
+    horas.textContent = calculoHoras.toString().padStart(2, '0');
+    minutos.textContent = calculoMinutos.toString().padStart(2, '0');
+    segundos.textContent = calculoSegundos.toString().padStart(2, '0');
   }
 
-  // Função para atualizar barra de carregamento
+  function criarCoracao() {
+    const coracao = document.createElement('div');
+    coracao.classList.add('coracao-animado');
+    coracao.textContent = '';
+    coracoes.appendChild(coracao);
+    coracao.style.left = `${Math.random() * 100}%`;
+    coracao.style.top = `${Math.random() * 100}%`;
+    setTimeout(() => coracao.remove(), 3000);
+  }
+
   function atualizarBarraCarregamento() {
     let progressoValor = 0;
     const intervalo = setInterval(() => {
       progressoValor += 1;
-      document.querySelector('.progresso').style.width = progressoValor + '%';
-      if (progressoValor >= 100) {
-        clearInterval(intervalo);
-      }
+      progresso.style.width = `${progressoValor}%`;
+      if (progressoValor >= 100) clearInterval(intervalo);
     }, 50);
   }
 
-  // Iniciar contador
+  function playAudio() {
+    if (audio) audio.play();
+  }
+
   atualizarContador();
   setInterval(atualizarContador, 1000);
-
-  // Iniciar barra de carregamento
+  setInterval(criarCoracao, 500);
   atualizarBarraCarregamento();
-
-  // Exibir conteúdo após carregamento
   setTimeout(() => {
     carregamento.style.display = 'none';
     container.style.display = 'block';
-    foto.addEventListener("click", function() {
-      video.contentWindow.postMessage('{"event":"command","func":"' + (video.paused ? 'play' : 'pause') + '"}', "*");
-    });
   }, 5000);
 });
