@@ -53,7 +53,7 @@ margin-bottom: 20px;
 }
 
 .foto-container {
-width: 30%;
+width: 50%; /* Aumentei a largura */
 margin: 20px auto;
 border: 2px solid #ff0055;
 box-shadow: 0 0 10px #ff0055;
@@ -94,7 +94,8 @@ align-items: center;
 
 .contador {
 display: flex;
-justify-content: space-around;
+flex-wrap: wrap;
+justify-content: center;
 }
 
 .contador-coluna {
