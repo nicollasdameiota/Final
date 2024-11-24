@@ -41,7 +41,6 @@ body {
   border: 2px solid #ff0055;
   box-shadow: 0 0 10px #ff0055;
   padding: 20px;
-  display: none;
   background-color: rgba(0, 0, 0, 0.8);
 }
 
@@ -87,31 +86,18 @@ body {
   margin-top: 20px;
 }
 
-.contador-titulo {
+.contador {
   font-size: 24px;
   font-weight: bold;
   color: #ff0055;
   margin-bottom: 10px;
 }
 
-.contador {
-  display: flex;
-  justify-content: space-around;
-  margin-bottom: 20px;
-}
-
-.coluna {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.coluna span {
-  font-size: 36px;
-  font-weight: bold;
+#anos, #meses, #dias, #horas, #minutos, #segundos {
+  padding: 5px;
+  border: 1px solid #ff0055;
+  border-radius: 5px;
+  background-color: rgba(0, 0, 0, 0.5);
   color: #fff;
-  border: 2px solid #ff0055;
-  padding: 10px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px #ff0055;
+  margin: 0 5px;
 }
