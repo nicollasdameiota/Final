@@ -47,9 +47,10 @@
 </div>
 <script>
 document.addEventListener("DOMContentLoaded", function() {
+var carregamento = document.querySelector(".carregamento");
+carregamento.style.display = "none";
 var foto = document.querySelector(".foto-nosso");
 var video = document.getElementById("video");
-
 foto.addEventListener("click", function() {
 video.contentWindow.postMessage('{"event":"command","func":"' + (video.paused ? 'play' : 'pause') + '"}', "*");
 });
