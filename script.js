@@ -8,43 +8,42 @@ const minutos = document.getElementById('minutos');
 const segundos = document.getElementById('segundos');
 const carregamento = document.querySelector('.carregamento');
 const container = document.querySelector('.container');
+const foto = document.querySelector('.foto-nosso');
+const video = document.getElementById('video');
 
 // Função para formatar tempo
 function formatarTempo(tempo) {
-return tempo.toString().padStart(2, '0');
+  return tempo.toString().padStart(2, '0');
 }
 
 // Função para atualizar contador
 function atualizarContador() {
-const agora = new Date();
-const diferenca = agora.getTime() - dataInicio.getTime();
-
-const segundosTotal = diferenca / 1000;
-const minutosTotal = segundosTotal / 60;
-const horasTotal = minutosTotal / 60;
-const diasTotal = horasTotal / 24;
-
-const calculoDias = Math.floor(diasTotal);
-const calculoHoras = Math.floor(horasTotal) % 24;
-const calculoMinutos = Math.floor(minutosTotal) % 60;
-const calculoSegundos = Math.floor(segundosTotal) % 60;
-
-dias.textContent = formatarTempo(calculoDias);
-horas.textContent = formatarTempo(calculoHoras);
-minutos.textContent = formatarTempo(calculoMinutos);
-segundos.textContent = formatarTempo(calculoSegundos);
+  const agora = new Date();
+  const diferenca = agora.getTime() - dataInicio.getTime();
+  const segundosTotal = diferenca / 1000;
+  const minutosTotal = segundosTotal / 60;
+  const horasTotal = minutosTotal / 60;
+  const diasTotal = horasTotal / 24;
+  const calculoDias = Math.floor(diasTotal);
+  const calculoHoras = Math.floor(horasTotal) % 24;
+  const calculoMinutos = Math.floor(minutosTotal) % 60;
+  const calculoSegundos = Math.floor(segundosTotal) % 60;
+  dias.textContent = formatarTempo(calculoDias);
+  horas.textContent = formatarTempo(calculoHoras);
+  minutos.textContent = formatarTempo(calculoMinutos);
+  segundos.textContent = formatarTempo(calculoSegundos);
 }
 
 // Função para atualizar barra de carregamento
 function atualizarBarraCarregamento() {
-let progressoValor = 0;
-const intervalo = setInterval(() => {
-progressoValor += 1;
-document.querySelector('.progresso').style.width = progressoValor + '%';
-if (progressoValor >= 100) {
-clearInterval(intervalo);
-}
-}, 50);
+  let progressoValor = 0;
+  const intervalo = setInterval(() => {
+    progressoValor += 1;
+    document.querySelector('.progresso').style.width = progressoValor + '%';
+    if (progressoValor >= 100) {
+      clearInterval(intervalo);
+    }
+  }, 50);
 }
 
 // Iniciar contador
@@ -56,6 +55,9 @@ atualizarBarraCarregamento();
 
 // Exibir conteúdo após carregamento
 setTimeout(() => {
-carregamento.style.display = 'none';
-container.style.display = 'block';
-}, 1000);
+  carregamento.style.display = 'none';
+  container.style.display = 'block';
+  foto.addEventListener("click", function() {
+    video.contentWindow.postMessage('{"event":"command","func":"' + (video.paused ? 'play' : 'pause') + '"}', "*");
+  });
+}, 5000); // Agora a tela de carregamento sai após 5 segundos
