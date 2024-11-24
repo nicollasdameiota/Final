@@ -1,0 +1,115 @@
+body {
+background-color: #000;
+font-family: Arial, sans-serif;
+text-align: center;
+cursor: pointer;
+}
+
+.carregamento {
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background-color: #000;
+display: flex;
+justify-content: center;
+align-items: center;
+font-size: 24px;
+color: #FF69B4;
+z-index: 9999;
+}
+
+.barra-carregamento {
+width: 50%;
+height: 10px;
+border: 1px solid #FF69B4;
+border-radius: 5px;
+overflow: hidden;
+}
+
+.progresso {
+width: 0%;
+height: 100%;
+background-color: #FF69B4;
+transition: width 5000ms;
+}
+
+.container {
+width: 80%;
+margin: 40px auto;
+border: 2px solid #ff0055;
+box-shadow: 0 0 10px #ff0055;
+padding: 20px;
+display: none;
+}
+
+.titulo-amor {
+font-size: 36px;
+font-weight: bold;
+color: #ff0055;
+text-shadow: 0 0 10px #ff0055;
+margin-bottom: 20px;
+}
+
+.foto-container {
+border: 2px solid #ff0055;
+box-shadow: 0 0 10px #ff0055;
+width: 50%;
+margin: 20px auto;
+}
+
+.foto-nosso {
+width: 100%;
+height: auto;
+aspect-ratio: 4/4;
+object-fit: cover;
+border-radius: 10px;
+}
+
+.nomes {
+font-size: 48px;
+font-weight: bold;
+color: #ff0055;
+text-shadow: 0 0 10px #ff0055;
+margin-bottom: 10px;
+}
+
+.texto-amor {
+font-size: 18px;
+color: #ff69b4;
+margin-bottom: 20px;
+}
+
+.contador-container {
+margin-top: 20px;
+}
+
+.contador-titulo {
+font-size: 24px;
+font-weight: bold;
+color: #ff0055;
+margin-bottom: 10px;
+}
+
+.contador {
+display: flex;
+justify-content: space-around;
+margin-bottom: 20px;
+}
+
+.coluna {
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+
+.coluna span {
+font-size: 36px;
+font-weight: bold;
+color: #fff;
+border: 2px solid #ff0055;
+padding: 10px;
+border-radius: 10px;
+box-shadow: 0 0 10px #ff0055;
+}
