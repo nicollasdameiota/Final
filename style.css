@@ -57,6 +57,7 @@ border: 2px solid #ff0055;
 box-shadow: 0 0 10px #ff0055;
 width: 50%;
 margin: 20px auto;
+border-radius: 10px;
 }
 
 .foto-nosso {
@@ -80,6 +81,9 @@ font-size: 18px;
 color: #ff69b4;
 margin-bottom: 20px;
 text-align: justify;
+padding: 20px;
+border-radius: 10px;
+background-color: rgba(0, 0, 0, 0.5);
 }
 
 .contador-container {
@@ -90,8 +94,8 @@ align-items: center;
 
 .contador {
 display: flex;
-justify-content: center;
-font-size: 36px;
+justify-content: space-around;
+font-size: 24px;
 font-weight: bold;
 color: #ff0055;
 margin-bottom: 20px;
@@ -103,5 +107,9 @@ border: 2px solid #ff0055;
 border-radius: 10px;
 background-color: rgba(0, 0, 0, 0.5);
 color: #fff;
+margin: 0 10px;
+}
+
+.coluna {
 margin: 0 10px;
 }
