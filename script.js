@@ -2,7 +2,6 @@
 const dataInicio = new Date('2024-06-09T00:00:00.000Z');
 
 // Selecionar elementos
-const contador = document.querySelector('.contador');
 const anos = document.getElementById('anos');
 const meses = document.getElementById('meses');
 const dias = document.getElementById('dias');
@@ -32,7 +31,7 @@ function atualizarContador() {
   const calculoMinutos = Math.floor(minutosTotal) % 60;
   const calculoSegundos = Math.floor(segundosTotal) % 60;
 
-  anos.textContent = calculoAnos;
+  anos.textContent = calculoAnos.toString().padStart(2, '0');
   meses.textContent = calculoMeses.toString().padStart(2, '0');
   dias.textContent = calculoDias.toString().padStart(2, '0');
   horas.textContent = calculoHoras.toString().padStart(2, '0');
