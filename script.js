@@ -1,3 +1,4 @@
+
 document.addEventListener("DOMContentLoaded", () => {
   const dataInicio = new Date('2024-06-09T00:00:00.000Z');
   const dias = document.getElementById('dias');
@@ -27,16 +28,15 @@ document.addEventListener("DOMContentLoaded", () => {
     const intervalo = setInterval(() => {
       progressoValor += 1;
       progresso.style.width = `${progressoValor}%`;
-      if (progressoValor >= 100) clearInterval(intervalo);
+      if (progressoValor >= 100) {
+        clearInterval(intervalo);
+        carregamento.classList.add('oculto');
+        container.style.display = 'block';
+      }
     }, 50);
   }
 
   atualizarContador();
   setInterval(atualizarContador, 1000);
   atualizarBarraCarregamento();
-
-  setTimeout(() => {
-    carregamento.style.display = 'none';
-    container.style.display = 'block';
-  }, 5000);
 });
