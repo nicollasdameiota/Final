@@ -17,7 +17,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const calculoHoras = Math.floor((diferenca % 86400) / 3600);
     const calculoMinutos = Math.floor((diferenca % 3600) / 60);
     const calculoSegundos = Math.floor(diferenca % 60);
-
     dias.textContent = calculoDias;
     horas.textContent = calculoHoras.toString().padStart(2, '0');
     minutos.textContent = calculoMinutos.toString().padStart(2, '0');
@@ -36,19 +35,20 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function atualizarBarraCarregamento() {
     let progressoValor = 0;
+    const total = 100;
     const intervalo = setInterval(() => {
-      progressoValor += 1;
+      progressoValor += total / 10;
       progresso.style.width = `${progressoValor}%`;
-      if (progressoValor >= 100) {
+      if (progressoValor >= total) {
         clearInterval(intervalo);
         carregamento.style.display = 'none';
         container.style.display = 'block';
+        atualizarContador();
+        setInterval(atualizarContador, 1000);
+        setInterval(criarCoracao, 500);
       }
-    }, 50);
+    }, 200);
   }
 
-  atualizarContador();
-  setInterval(atualizarContador, 1000);
-  setInterval(criarCoracao, 500);
   atualizarBarraCarregamento();
 });
