@@ -10,11 +10,37 @@ body {
   height: 100%;
   background-color: #fff;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   font-size: 24px;
   color: #333;
   z-index: 9999;
+}
+
+.barra-carregamento {
+  width: 50%;
+  height: 10px;
+  border: 1px solid #333;
+  border-radius: 5px;
+  overflow: hidden;
+  margin-top: 20px;
+}
+
+.progresso {
+  width: 0%;
+  height: 100%;
+  background-color: #333;
+  animation: carregar 5s forwards;
+}
+
+@keyframes carregar {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
 }
 
 .container {
@@ -25,8 +51,8 @@ body {
 
 .coelhinho {
   position: absolute;
-  top: -50px;
-  right: -50px;
+  top: -100px;
+  right: 0;
   z-index: 1;
 }
 
@@ -36,6 +62,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 100px;
 }
 
 .foto {
@@ -44,13 +71,4 @@ body {
   object-fit: cover;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-}
-
-.efeitos-especiais {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
 }
