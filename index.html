@@ -1,71 +1,48 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Contador de Namoro</title>
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contador de Namoro</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div class="carregamento">
-<p class="texto-carregamento">Carregando...</p>
-<div class="barra-carregamento">
-<div class="progresso"></div>
-</div>
-</div>
-<div class="container">
-<h1 class="titulo-amor">EU TE AMO</h1>
-<div class="foto-container">
-<img src="https://i.ibb.co/DYwpWM4/1732423481244-9d635009-dd18-44ba-904f-9ca6230290f4-1-2.jpg" alt="Imagem" class="foto-nosso">
-</div>
-<h2 class="nomes">𝒩𝒾𝒸𝑜𝓁𝓁𝒶𝓈 𝑒 𝒯𝒽𝒶𝒾𝓈</h2>
-<p class="texto-amor">Linda, você é a presença que torna meu mundo mais vibrante...</p>
-<div class="contador-container">
-<div class="contador-titulo">Juntos há:</div>
-<div class="contador">
-<div class="contador-coluna">
-<span id="dias">0</span>
-<p>Dias</p>
-</div>
-<div class="contador-coluna">
-<span id="horas">0</span>
-<p>Horas</p>
-</div>
-<div class="contador-coluna">
-<span id="minutos">0</span>
-<p>Minutos</p>
-</div>
-<div class="contador-coluna">
-<span id="segundos">0</span>
-<p>Segundos</p>
-</div>
-</div>
-</div>
-</div>
-<script>
-document.addEventListener("DOMContentLoaded", function() {
-const dataInicio = new Date('2024-06-09T00:00:00.000Z');
-const dias = document.getElementById('dias');
-const horas = document.getElementById('horas');
-const minutos = document.getElementById('minutos');
-const segundos = document.getElementById('segundos');
+  <div class="carregamento">
+    <p class="texto-carregamento">Carregando...</p>
+    <div class="barra-carregamento">
+      <div class="progresso"></div>
+    </div>
+  </div>
+  <div class="container">
+    <h1 class="titulo-amor">EU TE AMO</h1>
+    <div class="foto-container">
+      <img src="https:                                                                                                               
+    </div>
+    <h2 class="nomes">𝒩𝒾𝒸𝑜𝓁𝓁𝒶𝓈 𝑒 𝒯𝒽𝒶𝒾𝓈</h2>
+    <p class="texto-amor">Linda, você é a presença que torna meu mundo mais vibrante...</p>
+    <div class="contador-container">
+      <div class="contador-titulo">Juntos há:</div>
+      <div class="contador">
+        <div class="contador-coluna">
+          <span id="dias">0</span>
+          <p>Dias</p>
+        </div>
+        <div class="contador-coluna">
+          <span id="horas">0</span>
+          <p>Horas</p>
+        </div>
+        <div class="contador-coluna">
+          <span id="minutos">0</span>
+          <p>Minutos</p>
+        </div>
+        <div class="contador-coluna">
+          <span id="segundos">0</span>
+          <p>Segundos</p>
+        </div>
+      </div>
+    </div>
+  </div>
 
-function atualizarContador() {
-const agora = new Date();
-const diferenca = (agora.getTime() - dataInicio.getTime()) / 1000;
-const calculoDias = Math.floor(diferenca / 86400);
-const calculoHoras = Math.floor((diferenca % 86400) / 3600);
-const calculoMinutos = Math.floor((diferenca % 3600) / 60);
-const calculoSegundos = Math.floor(diferenca % 60);
-dias.textContent = calculoDias;
-horas.textContent = calculoHoras.toString().padStart(2, '0');
-minutos.textContent = calculoMinutos.toString().padStart(2, '0');
-segundos.textContent = calculoSegundos.toString().padStart(2, '0');
-}
-
-atualizarContador();
-setInterval(atualizarContador, 1000);
-});
-</script>
+  <script src="script.js"></script>
 </body>
 </html>
