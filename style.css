@@ -25,10 +25,6 @@ body {
   z-index: 9999;
 }
 
-.carregamento.oculto {
-  display: none;
-}
-
 .barra-carregamento {
   width: 50%;
   height: 10px;
@@ -41,7 +37,16 @@ body {
   width: 0%;
   height: 100%;
   background-color: #FF69B4;
-  transition: width 5s linear;
+  animation: carregar 5s forwards;
+}
+
+@keyframes carregar {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
 }
 
 .container {
@@ -54,82 +59,4 @@ body {
   display: none;
 }
 
-.contador-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.contador {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.contador-coluna {
-  margin: 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: #fff;
-  border: 2px solid #ff0055;
-  padding: 10px;
-  border-radius: 10px;
-  color: #ff0055;
-}
-
-.contador span {
-  font-size: 24px;
-  font-weight: bold;
-}
-
-.contador p {
-  font-size: 18px;
-}
-
-.titulo-amor {
-  font-size: 36px;
-  font-weight: bold;
-  color: #ff0055;
-  text-shadow: 0 0 10px #ff0055;
-  margin-bottom: 20px;
-}
-
-.foto-container {
-  position: relative;
-  width: 50%;
-  margin: 20px auto;
-  border: 2px solid #ff0055;
-  box-shadow: 0 0 10px #ff0055;
-  border-radius: 10px;
-  overflow: hidden;
-}
-
-.foto-nosso {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  cursor: pointer;
-  z-index: 1;
-}
-
-.nomes {
-  font-size: 48px;
-  font-weight: bold;
-  color: #ff0055;
-  text-shadow: 0 0 10px #ff0055;
-  margin-bottom: 10px;
-}
-
-.texto-amor {
-  font-size: 18px;
-  color: #FF69B4;
-  margin-bottom: 20px;
-  text-align: justify;
-  padding: 20px;
-  border-radius: 10px;
-  background-color: rgba(0, 0, 0, 0.5);
-}
+/* Outros estilos... */
