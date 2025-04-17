@@ -1,13 +1,10 @@
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  background-color: #000;
-  font-family: Arial, sans-serif;
-  text-align: center;
+.container {
+  width: 90%;
+  margin: 20px auto;
+  border: 2px solid #ff0055;
+  box-shadow: 0 0 10px #ff0055;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.8);
 }
 
 .carregamento {
@@ -25,37 +22,38 @@ body {
   z-index: 9999;
 }
 
-.barra-carregamento {
+.foto-container {
+  position: relative;
   width: 50%;
-  height: 10px;
-  border: 1px solid #FF69B4;
-  border-radius: 5px;
-  overflow: hidden;
-}
-
-.progresso {
-  width: 0%;
-  height: 100%;
-  background-color: #FF69B4;
-  animation: carregar 5s forwards;
-}
-
-@keyframes carregar {
-  0% {
-    width: 0%;
-  }
-  100% {
-    width: 100%;
-  }
-}
-
-.container {
-  width: 90%;
   margin: 20px auto;
   border: 2px solid #ff0055;
   box-shadow: 0 0 10px #ff0055;
-  padding: 20px;
-  background-color: rgba(0, 0, 0, 0.8);
-  display: none; /* Mantenha essa linha */
+  border-radius: 10px;
+  overflow: hidden;
 }
 
+.foto-nosso {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  cursor: pointer;
+}
+
+.contador-container {
+  margin-top: 20px;
+  display: block; /* Adicionei essa linha */
+}
+
+.contador {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 10px;
+}
+
+.contador-coluna {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0 10px;
+}
