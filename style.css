@@ -50,3 +50,12 @@ body {
 }
 
 .container {
+  width: 90%;
+  margin: 20px auto;
+  border: 2px solid #ff0055;
+  box-shadow: 0 0 10px #ff0055;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: none; /* Mantenha essa linha */
+}
+
