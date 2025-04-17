@@ -59,4 +59,42 @@ body {
   display: none;
 }
 
-/* Outros estilos... */
+.foto-container {
+  position: relative;
+  width: 50%;
+  margin: 20px auto;
+  border: 2px solid #ff0055;
+  box-shadow: 0 0 10px #ff0055;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.foto-nosso {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  cursor: pointer;
+}
+
+.contador-container {
+  margin-top: 20px;
+}
+
+.contador {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 10px;
+}
+
+.contador-coluna {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0 10px;
+}
+
+.contador-coluna span {
+  font-size: 24px;
+  font-weight: bold;
+  color: #FF69B4;
