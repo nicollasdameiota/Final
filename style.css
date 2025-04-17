@@ -47,6 +47,7 @@ body {
   width: 90%;
   margin: 20px auto;
   position: relative;
+  display: none;
 }
 
 .foto-container {
