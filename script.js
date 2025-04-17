@@ -11,4 +11,3 @@ document.addEventListener("DOMContentLoaded", () => {
   foto.addEventListener('click', () => {
     alert('Feliz Páscoa meu Amor!');
   });
-});
