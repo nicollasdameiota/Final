@@ -49,25 +49,22 @@ body {
   position: relative;
 }
 
-.coelhinho {
-  position: absolute;
-  top: -100px;
-  right: 0;
-  z-index: 1;
+.foto-container {
+  position: relative;
+  width: 50%;
+  margin: 20px auto;
 }
 
-.foto-container {
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 100px;
+.coelhinho {
+  position: absolute;
+  top: -50px;
+  right: -50px;
+  font-size: 50px;
 }
 
 .foto {
-  width: 50%;
-  height: 50%;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
