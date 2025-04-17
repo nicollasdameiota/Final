@@ -26,3 +26,4 @@ document.addEventListener("DOMContentLoaded", () => {
     atualizarContador();
     setInterval(atualizarContador, 1000);
   }, 5000);
+});
