@@ -6,4 +6,9 @@ document.addEventListener("DOMContentLoaded", () => {
   foto.addEventListener('click', () => {
     alert('Feliz Páscoa meu Amor!');
   });
+
+  window.addEventListener('load', () => {
+    carregamento.style.display = 'none';
+    container.style.display = 'block';
+  });
 });
