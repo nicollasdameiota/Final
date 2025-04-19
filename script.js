@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
   foto.addEventListener('click', () => {
     alert('Feliz Páscoa meu Amor!');
   });
-
+  
   setTimeout(() => {
     carregamento.style.display = 'none';
     container.style.display = 'block';
